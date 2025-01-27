@@ -47,3 +47,32 @@ FROM `vodafonebigqproject-0011.ashu_dataset001.ashu_table2`
 GROUP BY name 
 ORDER BY my_count DESC LIMIT 10;
 ```
+
+### table query 2 
+
+```sql
+
+SELECT name ,gender, sum(count) as my_count 
+FROM `vodafonebigqproject-0011.ashu_dataset001.ashu_table2` 
+GROUP BY name , gender
+ORDER BY my_count DESC LIMIT 10;
+
+```
+
+### Table query 3 
+
+```sql
+SELECT name ,gender, sum(count) as my_count 
+FROM `vodafonebigqproject-0011.ashu_dataset001.ashu_table2` 
+WHERE gender = 'F'
+GROUP BY name , gender
+ORDER BY my_count DESC LIMIT 10;
+```
+
+### CTAS 
+
+```sql
+create table `vodafonebigqproject-0011.ashu_dataset001.ashu_table3` AS
+SELECT name ,gender, count 
+FROM `vodafonebigqproject-0011.ashu_dataset001.ashu_table2` ;
+```
