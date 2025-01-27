@@ -133,3 +133,32 @@ Collecting google-auth<3.0.0dev,>=2.14.1 (from google-cloud-bigquery==3.29.0)
 Collecting google-cloud-core<3.0.0dev,>=2.4.1 (from google-cloud-bigquery==3.29.0)
 
 ```
+
+### checking version in python Interprator 
+
+```
+(ashu-env) learntechbyme@cloudshell:~ (vodafonebigqproject-0011)$ python
+Python 3.12.3 (main, Jan 17 2025, 18:03:48) [GCC 13.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from google.cloud import bigquery 
+>>> bigquery.__version__
+'3.29.0'
+>>> exit()
+
+
+(ashu-env) learntechbyme@cloudshell:~ (vodafonebigqproject-0011)$ deactivate 
+learntechbyme@cloudshell:~ (vodafonebigqproject-0011)$ 
+learntechbyme@cloudshell:~ (vodafonebigqproject-0011)$ 
+learntechbyme@cloudshell:~ (vodafonebigqproject-0011)$ python
+Python 3.12.3 (main, Jan 17 2025, 18:03:48) [GCC 13.3.0] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> from google.cloud import bigquery
+>>> bigquery.__version__
+'3.27.0'
+>>> 
+
+```
+
+### version and sample code from pypi.org
+
+[click_here](https://pypi.org/project/google-cloud-bigquery/)
