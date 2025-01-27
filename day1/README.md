@@ -35,3 +35,15 @@ options(
 drop schema `vodafonebigqproject-0011.ashu_dataset003`;
 ```
 
+### Intro to table in BigQ
+
+<img src="table1.png">
+
+### Query example of table 
+
+```sql
+SELECT name , sum(count) as my_count 
+FROM `vodafonebigqproject-0011.ashu_dataset001.ashu_table2` 
+GROUP BY name 
+ORDER BY my_count DESC LIMIT 10;
+```
