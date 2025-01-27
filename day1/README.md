@@ -162,3 +162,12 @@ Type "help", "copyright", "credits" or "license" for more information.
 ### version and sample code from pypi.org
 
 [click_here](https://pypi.org/project/google-cloud-bigquery/)
+
+## BIGQ is capturing job history 
+
+<img src="jobh1.png">
+
+### Scheduling query 
+
+<img src="sche1.png">
+
