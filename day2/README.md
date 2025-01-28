@@ -225,3 +225,16 @@ In denormalization, you might combine these tables into one:
 
 <img src="jsontable1.png">
 
+### query with data
+
+```
+SELECT
+  orderId,storeLocation,pd.*
+FROM
+  `vodafonebigqproject-0011.ashu_dataset001.ashu_nested_table001`
+CROSS JOIN
+  UNNEST(products) AS pd
+WHERE
+  pd.productName = "Table"
+
+```
