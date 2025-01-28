@@ -91,3 +91,8 @@ ALTER TABLE
 RENAME
   COLUMN name TO name_new
 ```
+
+## Normalization vs DeNOM 
+
+<img src="nm1.png">
+
