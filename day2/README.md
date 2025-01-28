@@ -220,3 +220,8 @@ In denormalization, you might combine these tables into one:
 
 - **Normalization** is best for transactional systems (OLTP) where data integrity and minimizing redundancy are crucial.
 - **Denormalization** is better for analytical systems (OLAP) where fast query performance and simplified querying are priorities.
+
+### creating table with manual schema json data
+
+<img src="jsontable1.png">
+
