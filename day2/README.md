@@ -60,3 +60,34 @@ WHERE
 ORDER BY
   max DESC
 ```
+
+## Drive data url 
+### Orginal URL: https://drive.google.com/file/d/1c46Al6C2dB8m6uV0orRPa_LfR6A1qW4h/view?usp=drive_link
+
+# BIG query supported URL 
+
+https://drive.google.com/open?id=1c46Al6C2dB8m6uV0orRPa_LfR6A1qW4h
+
+### dataset data transfer options 
+
+<img src="opt1.png">
+
+## table alter options 
+
+### changing data type of particular column to its compatible type 
+
+```sql
+ALTER TABLE
+  `vodafonebigqproject-0011.ashudataset_002.ashu_table1_copy` ALTER COLUMN count
+SET
+  DATA type FLOAT64;
+```
+
+### changing existing column name 
+
+```sql
+ALTER TABLE
+  `vodafonebigqproject-0011.ashudataset_002.ashu_table1_copy`
+RENAME
+  COLUMN name TO name_new
+```
