@@ -33,3 +33,68 @@ This is BigQuery CLI 2.1.12
 learntechbyme@cloudshell:~ (vodafonebigqproject-0011)$ 
 
 ```
+
+### in case you want to set current / any project to terminal 
+
+```
+gcloud config set project vodafonebigqproject-0011 
+```
+
+### listing datasets 
+
+```
+bq  ls
+            datasetId            
+ ------------------------------- 
+  Anshika_dataset_001            
+  Tushar_001                     
+  alok_dataset001                
+  alok_datatransfer              
+  ankit_dataset001               
+  ankit_dataset002_usmr          
+  anshika_dataset_002            
+  anshika_dataset_003            
+  ashu_dataset001                
+  ashudataset_day3               
+```
+
+### checking more details about dataset
+
+```
+bq  show   --format=prettyjson   ashudataset_day3 
+{
+  "access": [
+    {
+      "role": "WRITER",
+      "specialGroup": "projectWriters"
+    },
+```
+
+### creating dataset 
+
+```
+bq  mk  --dataset    --location=US  ashu_clidatasets
+Dataset 'vodafonebigqproject-0011:ashu_clidatasets' successfully created.
+learntechbyme@cloudshell:~ (vodafonebigqproject-0011)$ bq ls
+            datasetId            
+ ------------------------------- 
+  Anshika_dataset_001            
+  Tushar_001                     
+  alok_dataset001                
+  alok_datatransfer              
+  ankit_dataset001               
+  ankit_dataset002_usmr          
+  anshika_dataset_002            
+  anshika_dataset_003            
+  ashu_clidatasets               
+  ashu_dataset001                
+  ashudataset_day3               
+  car_dataset                    
+  kartik_dataset_001             
+```
+
+### removing dataset (if empty)
+
+```
+ bq  rm   -d  ashu_clidatasets
+ ```
