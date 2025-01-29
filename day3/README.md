@@ -126,3 +126,14 @@ SELECT name,_PARTITIONTIME as pt, _PARTITIONDATE as pd  FROM `vodafonebigqprojec
 -:  _PARTITIONTIME AND _PARTITIONDATE 
 --
 ##### these 2 psuedo columns are getting created
+
+## to check the Schema of partition table which is internal to bigquery 
+### we can use sql _legacy model to run this query 
+
+```sql
+SELECT 
+  *
+FROM [ashudataset_day3.ashu_part_table1$__PARTITIONS_SUMMARY__]
+
+
+```
