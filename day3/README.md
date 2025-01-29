@@ -113,3 +113,16 @@ learntechbyme@cloudshell:~ (vodafonebigqproject-0011)$ bq  ls --dataset_id=ashud
   ashu_ext_table2     EXTERNAL                                              
 
 ```
+
+### select partitioned table with where clause 
+
+```sql
+SELECT name,_PARTITIONTIME as pt, _PARTITIONDATE as pd  FROM `vodafonebigqproject-0011.ashudataset_day3.ashu_part_table1` WHERE TIMESTAMP_TRUNC(_PARTITIONTIME, DAY) = TIMESTAMP("2025-01-29") LIMIT 1000
+
+```
+
+### Note: 
+--: if partition type is day -- then 
+-:  _PARTITIONTIME AND _PARTITIONDATE 
+--
+##### these 2 psuedo columns are getting created
