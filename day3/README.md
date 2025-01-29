@@ -1,1 +1,6 @@
-# vodafone_gcpBigQuery_27thjan2025
+## Revision 
+
+### Rev 1 
+
+<img src="rev1.png">
+
