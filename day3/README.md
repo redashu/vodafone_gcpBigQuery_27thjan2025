@@ -98,3 +98,18 @@ learntechbyme@cloudshell:~ (vodafonebigqproject-0011)$ bq ls
 ```
  bq  rm   -d  ashu_clidatasets
  ```
+
+### creating table 
+
+```
+bq mk --table  --dataset_id=ashudataset_day3  ashu_cli_table111 name:STRING,id:INTEGER
+Table 'vodafonebigqproject-0011:ashudataset_day3.ashu_cli_table111' successfully created.
+learntechbyme@cloudshell:~ (vodafonebigqproject-0011)$ 
+learntechbyme@cloudshell:~ (vodafonebigqproject-0011)$ bq  ls --dataset_id=ashudataset_day3
+       tableId          Type     Labels   Time Partitioning   Clustered Fields  
+ ------------------- ---------- -------- ------------------- ------------------ 
+  ashu_cli_table111   TABLE                                                     
+  ashu_ext_table1     EXTERNAL                                                  
+  ashu_ext_table2     EXTERNAL                                              
+
+```
