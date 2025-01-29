@@ -150,4 +150,80 @@ FROM [ashudataset_day3.ashu_part_table1$__PARTITIONS_SUMMARY__]
 
 <img src="ml2.png">
 
+### ML flow understanding 
 
+<img src="ml3.png">
+
+### A basic ML Model training process 
+
+<img src="ml4.png">
+
+###  Using data split to understand 
+
+<img src="ml5.png">
+
+### BIgQueryML Model 
+
+<img src="ml6.png">
+
+
+### link to check 
+
+[click_here](https://cloud.google.com/bigquery/docs/bqml-introduction#supported_models)
+
+## BigQUeryML 
+
+### creating model of linear regression using SQL with dataset stored in table 
+
+```sql
+CREATE OR REPLACE MODEL
+  `vodafonebigqproject-0011.ashudataset_day3.ashu_linear_regression_model` OPTIONS(model_type='LINEAR_REG',
+    input_label_cols=['price']) AS
+SELECT
+  avg_house_age, avg_rooms, avg_bedrooms,
+  price/100000 AS price
+FROM
+  `vodafonebigqproject-0011`.`ashudataset_day3`.`ashu_ML1_table1`;
+```
+
+
+
+### selecting all the features 
+
+```sql
+CREATE OR REPLACE MODEL
+  `vodafonebigqproject-0011.ashudataset_day3.ashu_linear_regression_model` OPTIONS(model_type='LINEAR_REG',
+    input_label_cols=['price']) AS
+SELECT
+  avg_house_age,
+  avg_rooms,
+  avg_bedrooms,
+  address,
+  population,
+  price/100000 AS price
+FROM
+  `vodafonebigqproject-0011`.`ashudataset_day3`.`ashu_ML1_table1`;
+```
+### as outptu  we can see an overfitting happened 
+
+<img src="overfit.png">
+
+
+### using L2 Regulization to little remote the overfitting 
+
+```sql
+-- add early_stop to false in this given query add max iteration to 7 in this query
+-- add l2 regulization value to 0.2
+-- add optimization strategy to batch gradient decent
+CREATE OR REPLACE MODEL
+  `vodafonebigqproject-0011.ashudataset_day3.ashu_linear_regression_model` OPTIONS(model_type='LINEAR_REG',
+    input_label_cols=['price'], early_stop=false, max_iterations=12, l2_reg=1, OPTIMIZE_STRATEGY="BATCH_GRADIENT_DESCENT") AS
+SELECT
+  avg_house_age,
+  avg_rooms,
+  avg_bedrooms,
+  population,
+  price/100000 AS price
+FROM
+  `vodafonebigqproject-0011`.`ashudataset_day3`.`ashu_ML1_table1`;
+```
