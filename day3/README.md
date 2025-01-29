@@ -137,3 +137,17 @@ FROM [ashudataset_day3.ashu_part_table1$__PARTITIONS_SUMMARY__]
 
 
 ```
+
+## INtro to data scinece section 
+
+<img src="ds1.png">
+
+### Introducing problems with earlier warehouses 
+
+<img src="ml1.png">
+
+### any Modern dataware house 
+
+<img src="ml2.png">
+
+
