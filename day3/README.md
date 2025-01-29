@@ -22,3 +22,14 @@ OPTIONS (
     uris = ['gs://ashu_bucket001/auto_detect.txt']
   );
 ```
+
+## INtro with BQ 
+
+```
+learntechbyme@cloudshell:~ (vodafonebigqproject-0011)$ pip list  | grep -i bigquery 
+google-cloud-bigquery    3.29.0
+learntechbyme@cloudshell:~ (vodafonebigqproject-0011)$ bq  version
+This is BigQuery CLI 2.1.12
+learntechbyme@cloudshell:~ (vodafonebigqproject-0011)$ 
+
+```
