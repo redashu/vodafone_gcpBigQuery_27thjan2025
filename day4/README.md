@@ -83,3 +83,11 @@ SELECT
     ML.EVALUATE(MODEL `vodafonebigqproject-0011.ashu_finaldatasets.ashu_linear_house`, (select * from `vodafonebigqproject-0011.ashu_finaldatasets.ashu_usa_eval`));
 ```
 
+### predicting model 
+
+```sql
+SELECT
+    *
+  FROM
+    ML.PREDICT(MODEL `vodafonebigqproject-0011.ashu_finaldatasets.ashu_linear_house`, (select * from `vodafonebigqproject-0011`.`ashu_finaldatasets`.`ashu_usa_eval`));
+```
