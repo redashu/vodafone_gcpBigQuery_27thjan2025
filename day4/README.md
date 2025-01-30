@@ -38,3 +38,48 @@ ORDER BY user_count DESC
 
 ```
 
+## Training lR model 
+
+```sql
+CREATE OR REPLACE MODEL `vodafonebigqproject-0011.ashu_finaldatasets.ashu_linear_house` OPTIONS(model_type='LINEAR_REG',
+    input_label_cols=['price'] , early_stop=false, max_iterations=8, l2_reg=0.7, OPTIMIZE_STRATEGY="BATCH_GRADIENT_DESCENT") AS
+SELECT
+  avg_house_age,
+  avg_rooms,
+  avg_bedrooms,
+  avg_income,
+  population,
+  price/100000 AS price
+
+FROM  `vodafonebigqproject-0011.ashu_finaldatasets.ashu_usa_training` 
+```
+
+### to do evaluation use below query 
+
+```sql
+SELECT
+  *
+FROM
+  ML.EVALUATE(MODEL `vodafonebigqproject-0011.ashu_finaldatasets.ashu_linear_house`)
+```
+
+### another way to evaluate 
+
+```sql
+-- fix this query
+SELECT
+    *
+  FROM
+    ML.EVALUATE(MODEL `vodafonebigqproject-0011.ashu_finaldatasets.ashu_linear_house`, TABLE `vodafonebigqproject-0011.ashu_finaldatasets.ashu_usa_eval`);
+```
+
+### doing evaluation 
+
+```sql
+-- fix this query
+SELECT
+    *
+  FROM
+    ML.EVALUATE(MODEL `vodafonebigqproject-0011.ashu_finaldatasets.ashu_linear_house`, (select * from `vodafonebigqproject-0011.ashu_finaldatasets.ashu_usa_eval`));
+```
+
