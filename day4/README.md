@@ -8,3 +8,11 @@
 
 <img src="nt2.png">
 
+### Notice point 3 
+
+<img src="nt3.png">
+
+### Notice point 4 
+
+<img src="nt4.png">
+
