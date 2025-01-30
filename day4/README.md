@@ -161,4 +161,12 @@ FROM
       0.9 AS confidence_level))
 ```
 
+## Importing and exporting LLM models using tensorflow 
+
+<img src="gr1.png">
+
+### column security 
+
+<img src="sec1.png">
+
 
